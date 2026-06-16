@@ -1,0 +1,13 @@
+.gradle/
+build/
+out/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# User generated files during runtime
+tasks.txt
+employees_db.txt
+*.log
+*.tmp
