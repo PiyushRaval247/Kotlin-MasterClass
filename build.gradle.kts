@@ -11,15 +11,15 @@ subprojects {
 
     dependencies {
         // Add coroutines globally so lessons and projects can use them
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
-        testImplementation(kotlin("test"))
+        add("implementation", "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+        add("testImplementation", "org.jetbrains.kotlin:kotlin-test")
     }
 
-    tasks.test {
+    tasks.withType<Test> {
         useJUnitPlatform()
     }
 
-    kotlin {
+    extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension> {
         jvmToolchain(17)
     }
 }
